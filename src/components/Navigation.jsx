@@ -172,13 +172,13 @@ const BottomNav = () => {
                 changePage(nextPage);
                 break;
             case 49:
-                changeAmountPerPage(10);
+                handleChangeAmount(10);
                 break;
             case 50:
-                changeAmountPerPage(20);
+                handleChangeAmount(20);
                 break;
             case 53:
-                changeAmountPerPage(50);
+                handleChangeAmount(50);
                 break;
             default:
                 return;
