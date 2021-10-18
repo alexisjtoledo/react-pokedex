@@ -3,6 +3,7 @@ import {
     FILTER_POKEMONS,
     CHANGE_PAGE,
     CHANGE_POKEMONS_PER_PAGE,
+    CHANGE_TOTAL_AMOUNT,
 } from "../actions/index";
 
 const initialState = {
@@ -37,6 +38,11 @@ const pokemonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 pokemonsPerPage: action.payload,
+            };
+        case CHANGE_TOTAL_AMOUNT:
+            return {
+                ...state,
+                totalAmount: action.payload,
             };
         default:
             return state;

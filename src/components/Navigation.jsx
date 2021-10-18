@@ -17,7 +17,8 @@ const TopNav = () => {
     /* REDUX ACTIONS */
     const dispatch = useDispatch();
 
-    const { filterPokemons } = bindActionCreators(actionCreators, dispatch);
+    const { filterPokemons, changeTotalAmount, changePage } =
+        bindActionCreators(actionCreators, dispatch);
 
     /* REDUX STATE */
     const data = useSelector((state) => state.pokemonList);
@@ -36,6 +37,9 @@ const TopNav = () => {
             return pokemon.name.indexOf(normalizedValue) > -1;
         });
         filterPokemons(filteredResults);
+        const newAmount = filteredResults.length;
+        changeTotalAmount(newAmount);
+        changePage(1);
     };
 
     /**
