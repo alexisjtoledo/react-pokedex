@@ -8,6 +8,14 @@
     margin: 
         top: 1vh
         bottom: 1vh
+    @media only screen and (max-width: $small)
+        margin:
+            top: 1.5vh
+            bottom: 0
+    @media only screen and (min-width: $xlarge)
+        margin:
+            top: 2.5vh
+            bottom: 2.5vh
 
 .nav-btn
     width: 3.3vh
@@ -16,6 +24,11 @@
     border: none
     color: $primary
     cursor: pointer
+    @media only screen and (min-width: $xlarge)
+        width: 5vh
+        height: 5vh
+        font:
+            size: 2.5em
     &:disabled
         color: $lightshadow
         cursor: auto
@@ -28,10 +41,16 @@
 .left
     border-top-left-radius: .5em
     border-bottom-left-radius: .5em
+    @media only screen and (min-width: $xlarge)
+        border-top-left-radius: 1em
+        border-bottom-left-radius: 1em
 
 .right
     border-top-right-radius: .5em
     border-bottom-right-radius: .5em
+    @media only screen and (min-width: $xlarge)
+        border-top-right-radius: 1em
+        border-bottom-right-radius: 1em
 
 .input-container
     display: flex
@@ -49,6 +68,13 @@
         right: -3.3vh
     z-index: 999
     opacity: .2
+    @media only screen and (min-width: $xlarge)
+        width: 5vh
+        height: 5vh
+        font:
+            size: 2.5em
+        margin:
+            right: -5vh
 
 .top-input
     width: 30vw
@@ -59,6 +85,14 @@
     border: solid 2px $primary
     color: $primary
     background-color: $offwhite
+    @media only screen and (min-width: $xlarge)
+        height: 5vh
+        border-radius: 3em
+        font:
+            size: 2.5em
+        padding:
+            left: 5vh
+        border: solid 6px $primary
 
 .top-input-clear-btn
     display: flex
@@ -69,6 +103,13 @@
     margin:
         left: -3.3vh
     z-index: 999
+    @media only screen and (min-width: $xlarge)
+        width: 5vh
+        height: 5vh
+        font:
+            size: 2.5em
+        margin:
+            left: -5vh
 
 .top-selector
     height: 3.5vh
@@ -79,9 +120,20 @@
     background-color: $offwhite
     border: 2px $primary solid
     color: $primary
+    @media only screen and (max-width: $small)
+        width: 25vw
+    @media only screen and (min-width: $xlarge)
+        height: 5vh
+        border-radius: 5em
+        font:
+            size: 2.5em
+        border: solid 6px $primary
 
 .nav-label
     color: $offwhite
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 2.5em
 
 .bottom-button-container
     border-radius: .5em
@@ -90,3 +142,6 @@
     &:first-of-type
         margin: 
             right: 2em
+    @media only screen and (min-width: $xlarge)
+        border-radius: 3em
+        border: solid 6px $primary

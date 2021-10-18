@@ -4,3 +4,4 @@ export const CHANGE_PAGE = "pageChange";
 export const CHANGE_POKEMONS_PER_PAGE = "changePokemonsPerPage";
 export const CHANGE_TOTAL_AMOUNT = "changeTotalAmount";
 export const UPLOAD_POKEMON = "uploadPokemon";
+export const UPDATE_DEVICE = "updateDevice";

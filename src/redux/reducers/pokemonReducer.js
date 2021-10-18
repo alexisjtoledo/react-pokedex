@@ -5,6 +5,7 @@ import {
     CHANGE_POKEMONS_PER_PAGE,
     CHANGE_TOTAL_AMOUNT,
     UPLOAD_POKEMON,
+    UPDATE_DEVICE,
 } from "../actions/index";
 
 const initialState = {
@@ -49,6 +50,11 @@ const pokemonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 openedPokemon: action.payload,
+            };
+        case UPDATE_DEVICE:
+            return {
+                ...state,
+                isMobile: action.payload,
             };
         default:
             return state;

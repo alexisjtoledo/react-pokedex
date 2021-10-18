@@ -98,6 +98,7 @@ const TopNav = () => {
                         filterList(e.target.value);
                     }}
                     disabled={data.openedPokemon ? true : false}
+                    tabIndex="0"
                 />
                 <div
                     className="top-input-clear-btn"
@@ -111,6 +112,7 @@ const TopNav = () => {
                 className="top-selector"
                 onChange={(e) => sortList(e.target.value)}
                 disabled={data.openedPokemon ? true : false}
+                tabIndex="1"
             >
                 <option value="id">Number</option>
                 <option value="name">Name</option>
@@ -162,6 +164,7 @@ const BottomNav = () => {
                             ? true
                             : false
                     }
+                    tabIndex="2"
                 >
                     <i className="fas fa-caret-left"></i>
                 </button>
@@ -185,6 +188,7 @@ const BottomNav = () => {
                             ? true
                             : false
                     }
+                    tabIndex="3"
                 >
                     <i className="fas fa-caret-right"></i>
                 </button>
@@ -202,6 +206,7 @@ const BottomNav = () => {
                             ? true
                             : false
                     }
+                    tabIndex="4"
                 >
                     10
                 </button>
@@ -215,6 +220,7 @@ const BottomNav = () => {
                             ? true
                             : false
                     }
+                    tabIndex="5"
                 >
                     20
                 </button>
@@ -228,6 +234,7 @@ const BottomNav = () => {
                             ? true
                             : false
                     }
+                    tabIndex="6"
                 >
                     50
                 </button>

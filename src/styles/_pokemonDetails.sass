@@ -5,6 +5,13 @@
     width: 90vw
     height: 80vh
     transition: all 200ms ease-in-out
+    @media only screen and (max-width: $small)
+        flex-direction: column
+        height: 85vh
+        width: 80vw
+    @media only screen and (min-width: $xlarge)
+        width: 70vw
+        height: 75vh
 
 .details-img-container
     display: flex
@@ -14,6 +21,18 @@
     border-top-right-radius: 2em
     border-bottom-right-radius: 2em
     box-shadow: 10px 0px 100px $lightshadow
+    @media only screen and (min-width: $small) and (max-width: $large)
+        border-top-right-radius: 1em
+        border-bottom-right-radius: 1em
+    @media only screen and (max-width: $small)
+        border-top-right-radius: 0
+        border-bottom-right-radius: 2em
+        border-bottom-left-radius: 2em
+        border-top-left-radius: 0
+    @media only screen and (min-width: $xlarge)
+        width: 20vw
+        border-top-right-radius: 5em
+        border-bottom-right-radius: 5em
 
 .details-id
     align-self: flex-start
@@ -26,6 +45,9 @@
         weight: 700
         style: italic
     color: $whiteshadow
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 8em
 
 .details-id span
     font:
@@ -38,21 +60,67 @@
     margin:
         right: -10vw
         left: 5vw
+    @media only screen and (min-width: $small) and (max-width: $large)
+        margin:
+            right: 0
+            left: 0
+    @media only screen and (max-width: $small)
+        width: 50vw
+        margin:
+            top: -5vh
+            right: -25vw
+    @media only screen and (min-width: $xlarge)
+        width: 20vw
+        margin:
+            top: -10vh
+            left: -3vw
 
 .details-name
     font:
         size: 3em
         weight: 700
     text-transform: capitalize
+    @media only screen and (min-width: $small) and (max-width: $large)
+        font:
+            size: 1.5em
+    @media only screen and (max-width: $small)
+        font:
+            size: 2em
+        margin:
+            bottom: 1vh
+    @media only screen and (min-width: $xlarge)
+        font: 
+            size: 5em
 
 .details-size
     display: flex
+    @media only screen and (min-width: $small) and (max-width: $large)
+        margin:
+            top: -8vh
+    @media only screen and (min-width: $xlarge)
+        margin:
+            top: -8vh
 
 .details-weight
     margin:
         right: 1em
+    @media only screen and (min-width: $small) and (max-width: $large)
+        font:
+            size: .7em
+    @media only screen and (max-width: $small)
+        margin:
+            bottom: 2em
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 2.3em
 
 .details-height
+    @media only screen and (min-width: $small) and (max-width: $large)
+        font:
+            size: .7em
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 2.3em
 
 .details-close-btn
     width: 80%
@@ -65,8 +133,32 @@
     background-color: $offwhite
     box-shadow: 0 0 10px $lightshadow
     cursor: pointer
+    @media only screen and (min-width: $small) and (max-width: $large)
+        width: 60%
+        padding: 
+            left: .3em
+            right: .3em
+        font:
+            size: .7em
+    @media only screen and (max-width: $small)
+        position: absolute
+        bottom: 10vh
+        width: 65vw
+        background-color: $primary
+        border: 3px solid $tint
+        color: $tint
+        box-shadow: 0 0 10px $shadow
+    @media only screen and (min-width: $xlarge)
+        width: 80%
+        margin:
+            bottom: 2vh
+        font:
+            size: 2em    
+        box-shadow: 0 0 50px $lightshadow
     &:hover
         box-shadow: 0 0 10px $shadow
+        @media only screen and (min-width: $xlarge)
+            box-shadow: 0 0 50px $shadow
 
 .details-main-panel
     padding:
@@ -75,6 +167,17 @@
         bottom: 5em
         left: 10vw
     overflow: hidden
+    @media only screen and (min-width: $small) and (max-width: $large)
+        padding: 2em
+    @media only screen and (max-width: $small)
+        padding: 2em
+        overflow: scroll
+    @media only screen and (min-width: $xlarge)
+        padding:
+            top: 6em
+            right: 6vw
+            bottom: 6em
+            left: 6vw
 
 .details-label
     margin:
@@ -86,6 +189,12 @@
         weight: 700
     text-transform: capitalize
     color: $offwhite
+    @media only screen and (min-width: $small) and (max-width: $large)
+        font:
+            size: .7em
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 2.5em
 
 .secondary
     font:
@@ -99,6 +208,13 @@
     margin:
         bottom: .5em
     flex-wrap: wrap
+    @media only screen and (min-width: $xlarge)
+        margin:
+            bottom: 2em
+    &:last-of-type
+        @media only screen and (max-width: $small)
+            margin:
+                bottom: 8vh
 
 .details-pill
     margin:
@@ -112,12 +228,27 @@
     border: solid 2px $tint
     background-color: $offwhite
     box-shadow: 0 0 10px $lightshadow
+    @media only screen and (min-width: $small) and (max-width: $large)
+        padding: .3em
+    @media only screen and (max-width: $small)
+        border: none
+        padding: .8em
+    @media only screen and (min-width: $xlarge)
+        padding: .5em
+        font:
+            size: 1.5em
 
 .details-stats-container
     display: flex
     flex-direction: column
     margin:
         bottom: .5em
+    @media only screen and (min-width: $small) and (max-width: $large)
+        margin:
+            bottom: .3em
+    @media only screen and (min-width: $xlarge)
+        margin:
+            bottom: 2em
 
 .statistic
 
@@ -125,6 +256,12 @@
     background-color: $offwhite
     width: 40vw
     height: 16px
+    @media only screen and (min-width: $small) and (max-width: $large)
+        width: 53vw
+        height: 10px
+    @media only screen and (max-width: $small)
+        width: 68vw
+        height: 10px
 
 .stat-active
     background-color: $tint
@@ -134,3 +271,13 @@
         top: -14px
         left: 2px
         bottom: .5em
+    @media only screen and (min-width: $small) and (max-width: $large)
+        height: 8px
+        margin:
+            top: -9px
+            left: 1px
+    @media only screen and (max-width: $small)
+        height: 8px
+        margin:
+            top: -9px
+            left: 1px

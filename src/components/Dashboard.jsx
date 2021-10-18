@@ -13,10 +13,9 @@ const Dashboard = () => {
     /* PAGINATION */
     const lastPokemonIndex = data.currentPage * data.pokemonsPerPage;
     const firstPokemonIndex = lastPokemonIndex - data.pokemonsPerPage;
-    const currentPagePokemons = data.filteredPokemons.slice(
-        firstPokemonIndex,
-        lastPokemonIndex,
-    );
+    const currentPagePokemons = data.isMobile
+        ? data.filteredPokemons // Shows all pokemons if the device is in Portrait mode
+        : data.filteredPokemons.slice(firstPokemonIndex, lastPokemonIndex); // Shows pagination if the device is in Landscape mode
 
     return (
         <div className="dashboard-container">

@@ -10,8 +10,20 @@
     border-radius: 1em
     transition: all 200ms ease-in
     box-shadow: 0 0 8px $shadow
+    @media only screen and (min-width: $small) and (max-width: $large)
+        width: 40vw
+    @media only screen and (max-width: $small)
+        width: 70vw
+    @media only screen and (min-width: $xlarge)
+        width: 16vw
+        margin:
+            top: 3vh
+        border-radius: 2em
+        box-shadow: 0 0 50px $shadow
     &:hover
         box-shadow: 0 0 10px $whiteshadow
+        @media only screen and (min-width: $xlarge)
+            box-shadow: 0 0 30px $whiteshadow
 
 .card-header
     display: flex
@@ -28,6 +40,15 @@
         weight: 700
         style: italic
     color: $whiteshadow
+    @media only screen and (min-width: $small) and (max-width: $large)
+        font:
+            size: 2em
+    @media only screen and (max-width: $small)
+        font:
+            size: 1.5em
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 6em
 
 .card-id span
     font:
@@ -43,6 +64,14 @@
         bottom: 3em
         left: -1em
     z-index: 999
+    @media only screen and (min-width: $small) and (max-width: $large)
+        width: 15vw
+    @media only screen and (max-width: $small)
+        width: 40vw
+        margin:
+            left: -5em
+    @media only screen and (min-width: $xlarge)
+        width: 8vw
 
 .card-body
     display: flex
@@ -56,6 +85,21 @@
         left: 1vw
     border-radius: 1em
     background-color: $offwhite
+    box-shadow: 0 -3px 50px $lightshadow
+    @media only screen and (min-width: $small) and (max-width: $large)
+        padding:
+            right: 2vw
+            left: 2vw
+    @media only screen and (max-width: $small)
+        padding:
+            right: 5vw
+            left: 5vw
+    @media only screen and (min-width: $xlarge)
+        padding:
+            right: -10vw
+            left: -10vw
+        border-radius: 2em
+        box-shadow: 0 -3px 200px $lightshadow
 
 .card-title
     height: 3vh
@@ -65,19 +109,44 @@
         size: 1.5em
         weight: 700
     text-transform: capitalize
+    @media only screen and (min-width: $small) and (max-width: $large)
+        margin:
+            bottom: 1vh
+    @media only screen and (max-width: $small)
+        margin:
+            bottom: 1vh
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 3em
 
 .card-size
     display: flex
     padding:
         top: .2em
         bottom: 1em
+    @media only screen and (max-width: $small)
+        margin:
+            bottom: 1vh
+    @media only screen and (min-width: $small) and (max-width: $large)
+        font:
+            size: .8em
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 2em
 
 .card-weight
     margin:
         right: 1em
 
 .card-height
+
 .card-text
+    @media only screen and (min-width: $small) and (max-width: $large)
+        font:
+            size: .8em
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 2em
 
 .card-abilities
     display: flex
@@ -97,6 +166,9 @@
     border-radius: 1em
     text-transform: uppercase
     white-space: nowrap
+    @media only screen and (min-width: $xlarge)
+        font:
+            size: 1em
 
 .card-action-btn
     width: 18vw
@@ -110,5 +182,20 @@
     border-radius: .5em
     background-color: $tint
     color: $primary
+    @media only screen and (min-width: $small) and (max-width: $large)
+        width: 36vw
+    @media only screen and (max-width: $small)
+        width: 60vw
+        margin:
+            top: 1vh
+            bottom: 1vh
+    @media only screen and (min-width: $xlarge)
+        width: 14vw
+        margin:
+            top: 1vh
+        font:
+            size: 1.5em
     &:hover
         box-shadow: 0 0 5px $shadow
+        @media only screen and (min-width: $xlarge)
+            box-shadow: 0 0 20px $shadow
