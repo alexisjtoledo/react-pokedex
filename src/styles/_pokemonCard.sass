@@ -1,0 +1,110 @@
+@import variables
+
+.card
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    width: 20vw
+    margin: 1em 0
+    overflow: hidden
+    border-radius: 1em
+    transition: all 200ms ease-in
+
+.card-header
+    display: flex
+    justify-content: space-between
+    width: 100%
+    background-color: #49C0B6 // !TODO: Color according to type
+
+.card-id
+    padding: .5em
+    margin:
+        bottom: -2em
+    z-index: 10
+    font:
+        size: 3em
+        weight: 700
+        style: italic
+    color: $whiteshadow
+
+.card-id span
+    font:
+        weight: 300
+        style: italic
+
+.card-img
+    width: 12vw
+    height: auto
+    margin:
+        top: 2em
+        right: .3em
+        bottom: 3em
+        left: -1em
+    z-index: 999
+
+.card-body
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    margin:
+        top: -5em
+    padding:
+        right: 1vw
+        bottom: .8em
+        left: 1vw
+    border-radius: 1em
+    background-color: $offwhite
+
+.card-title
+    height: 3vh
+    margin:
+        top: 1em
+    font:
+        size: 1.5em
+        weight: 700
+    text-transform: capitalize
+
+.card-size
+    display: flex
+    padding:
+        top: .2em
+        bottom: 1em
+
+.card-weight
+    margin:
+        right: 1em
+
+.card-height
+.card-text
+
+.card-abilities
+    display: flex
+    flex-wrap: wrap
+    height: 5vh
+    padding: .5em 0
+
+.abilitie-pill
+    height: 1.2em
+    margin:
+        bottom: .5em
+        right: .5em
+    padding: .5em .8em
+    font:
+        size: .5em
+    border: solid 1px $primary
+    border-radius: 1em
+    text-transform: uppercase
+    white-space: nowrap
+
+.card-action-btn
+    width: 18vw
+    margin:
+        bottom: .3vw
+    padding: .6em
+    font:
+        size: .8em
+    text-transform: uppercase
+    border: 0 solid transparent
+    border-radius: .5em
+    background-color: $tint
+    color: $primary
