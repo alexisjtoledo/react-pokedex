@@ -80,7 +80,13 @@ export const getPokemons = () => {
                     `https://pokeapi.co/api/v2/pokemon/${i}`,
                 );
                 const pokemon = await res.json();
-                await dispatch(fetchPokemons(pokemon));
+                const keywords = [pokemon.name];
+                pokemon.abilities.map((ability) =>
+                    keywords.push(ability.ability.name),
+                );
+                const string = keywords.join(" ");
+                const pokemonWithKeywords = { ...pokemon, keywords: string };
+                await dispatch(fetchPokemons(pokemonWithKeywords));
             }
         } catch (e) {
             console.log(e);

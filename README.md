@@ -52,6 +52,4 @@ It alsos uses the Monserrat Font from [Google Fonts](https://fonts.google.com/) 
 
 ## Known Issues
 
--   It is not possible to search by ability.
-
--   The filters doesn't persist at reloading.
+-   Filters doesn't persist after reloading.

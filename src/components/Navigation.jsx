@@ -34,7 +34,7 @@ const TopNav = () => {
         setSearchValue(value);
         let normalizedValue = value.toLowerCase();
         const filteredResults = data.pokemons.filter((pokemon) => {
-            return pokemon.name.indexOf(normalizedValue) > -1;
+            return pokemon.keywords.indexOf(normalizedValue) > -1;
         });
         filterPokemons(filteredResults);
         const newAmount = filteredResults.length;
@@ -92,7 +92,7 @@ const TopNav = () => {
                 <input
                     type="text"
                     className="top-input"
-                    placeholder="Search"
+                    placeholder="Name or ability"
                     value={searchValue}
                     onChange={(e) => {
                         filterList(e.target.value);
