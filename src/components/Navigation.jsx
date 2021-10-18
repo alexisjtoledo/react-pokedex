@@ -118,7 +118,10 @@ const TopNav = () => {
 const BottomNav = () => {
     /* REDUX ACTIONS */
     const dispatch = useDispatch();
-    const { changePage } = bindActionCreators(actionCreators, dispatch);
+    const { changePage, changeAmountPerPage } = bindActionCreators(
+        actionCreators,
+        dispatch,
+    );
 
     /* REDUX STATE */
     const data = useSelector((state) => state.pokemonList);
@@ -137,12 +140,18 @@ const BottomNav = () => {
 
     const lastPage = numberOfPages.length;
 
+    const handleChangeAmount = (newAmount) => {
+        changeAmountPerPage(newAmount);
+        changePage(1);
+    };
+
     return (
         <div className="nav-container">
             <div className="bottom-button-container">
                 <button
                     className="nav-btn left"
                     onClick={() => changePage(data.currentPage - 1)}
+                    disabled={data.currentPage === 1 ? true : false}
                 >
                     <i className="fas fa-caret-left"></i>
                 </button>
@@ -160,6 +169,7 @@ const BottomNav = () => {
                 <button
                     className="nav-btn right"
                     onClick={() => changePage(data.currentPage + 1)}
+                    disabled={data.currentPage === lastPage ? true : false}
                 >
                     <i className="fas fa-caret-right"></i>
                 </button>
@@ -167,9 +177,33 @@ const BottomNav = () => {
 
             <span className="nav-label">Show&nbsp;</span>
             <div className="bottom-button-container">
-                <button className="nav-btn left">10</button>
-                <button className="nav-btn">20</button>
-                <button className="nav-btn right">50</button>
+                <button
+                    className={`nav-btn left ${
+                        data.pokemonsPerPage === 10 ? "active" : ""
+                    }`}
+                    onClick={() => handleChangeAmount(10)}
+                    disabled={data.pokemonsPerPage === 10 ? true : false}
+                >
+                    10
+                </button>
+                <button
+                    className={`nav-btn ${
+                        data.pokemonsPerPage === 20 ? "active" : ""
+                    }`}
+                    onClick={() => handleChangeAmount(20)}
+                    disabled={data.pokemonsPerPage === 20 ? true : false}
+                >
+                    20
+                </button>
+                <button
+                    className={`nav-btn right ${
+                        data.pokemonsPerPage === 50 ? "active" : ""
+                    }`}
+                    onClick={() => handleChangeAmount(50)}
+                    disabled={data.pokemonsPerPage === 50 ? true : false}
+                >
+                    50
+                </button>
             </div>
             <span className="nav-label">&nbsp;per page.</span>
         </div>

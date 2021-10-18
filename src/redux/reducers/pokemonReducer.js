@@ -1,4 +1,9 @@
-import { FETCH_POKEMONS, FILTER_POKEMONS, CHANGE_PAGE } from "../actions/index";
+import {
+    FETCH_POKEMONS,
+    FILTER_POKEMONS,
+    CHANGE_PAGE,
+    CHANGE_POKEMONS_PER_PAGE,
+} from "../actions/index";
 
 const initialState = {
     pokemons: [],
@@ -27,6 +32,11 @@ const pokemonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentPage: action.payload,
+            };
+        case CHANGE_POKEMONS_PER_PAGE:
+            return {
+                ...state,
+                pokemonsPerPage: action.payload,
             };
         default:
             return state;

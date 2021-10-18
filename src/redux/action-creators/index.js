@@ -1,4 +1,9 @@
-import { FETCH_POKEMONS, FILTER_POKEMONS, CHANGE_PAGE } from "../actions";
+import {
+    FETCH_POKEMONS,
+    FILTER_POKEMONS,
+    CHANGE_PAGE,
+    CHANGE_POKEMONS_PER_PAGE,
+} from "../actions";
 
 export const fetchPokemons = (newPokemon) => {
     return (dispatch) => {
@@ -23,6 +28,15 @@ export const changePage = (newPage) => {
         dispatch({
             type: CHANGE_PAGE,
             payload: newPage,
+        });
+    };
+};
+
+export const changeAmountPerPage = (newAmount) => {
+    return (dispatch) => {
+        dispatch({
+            type: CHANGE_POKEMONS_PER_PAGE,
+            payload: newAmount,
         });
     };
 };
