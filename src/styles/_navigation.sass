@@ -1,0 +1,84 @@
+@import variables
+
+.nav-container
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 3vh
+    margin: 
+        top: 1vh
+        bottom: 1vh
+
+.nav-btn
+    width: 3.3vh
+    height: 3.3vh
+    background-color: $offwhite
+    border: none
+    color: $primary
+    cursor: pointer
+
+.left
+    border-top-left-radius: .5em
+    border-bottom-left-radius: .5em
+
+.right
+    border-top-right-radius: .5em
+    border-bottom-right-radius: .5em
+
+.input-container
+    display: flex
+    align-items: center
+    margin:
+        right: 1.5em
+
+.search-icon
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 3vh
+    height: 3vh
+    margin:
+        right: -3.3vh
+    z-index: 999
+    opacity: .2
+
+.top-input
+    width: 30vw
+    height: 3vh
+    padding:
+        left: 3vh
+    border-radius: .5em
+    border: solid 2px $primary
+    color: $primary
+    background-color: $offwhite
+
+.top-input-clear-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 3vh
+    height: 3vh
+    margin:
+        left: -3.3vh
+    z-index: 999
+
+.top-selector
+    height: 3.5vh
+    width: 10vw
+    padding:
+        left: .5em
+    border-radius: .5em
+    background-color: $offwhite
+    border: 2px $primary solid
+    color: $primary
+
+.nav-label
+    color: $offwhite
+
+.bottom-button-container
+    border-radius: .5em
+    overflow: hidden
+    border: solid 2px $primary
+    &:first-of-type
+        margin: 
+            right: 2em
