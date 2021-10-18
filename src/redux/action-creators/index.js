@@ -1,4 +1,4 @@
-import { FETCH_POKEMONS, FILTER_POKEMONS } from "../actions";
+import { FETCH_POKEMONS, FILTER_POKEMONS, CHANGE_PAGE } from "../actions";
 
 export const fetchPokemons = (newPokemon) => {
     return (dispatch) => {
@@ -14,6 +14,15 @@ export const filterPokemons = (newList) => {
         dispatch({
             type: FILTER_POKEMONS,
             payload: newList,
+        });
+    };
+};
+
+export const changePage = (newPage) => {
+    return (dispatch) => {
+        dispatch({
+            type: CHANGE_PAGE,
+            payload: newPage,
         });
     };
 };

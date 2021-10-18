@@ -116,14 +116,51 @@ const TopNav = () => {
 };
 
 const BottomNav = () => {
+    /* REDUX ACTIONS */
+    const dispatch = useDispatch();
+    const { changePage } = bindActionCreators(actionCreators, dispatch);
+
+    /* REDUX STATE */
+    const data = useSelector((state) => state.pokemonList);
+
+    /* LOCAL VARIABLES */
+    const numberOfPages = [];
+
+    // Populating the pages array
+    for (
+        let i = 1;
+        i <= Math.ceil(data.totalAmount / data.pokemonsPerPage);
+        i++
+    ) {
+        numberOfPages.push(i);
+    }
+
+    const lastPage = numberOfPages.length;
+
     return (
         <div className="nav-container">
             <div className="bottom-button-container">
-                <button className="nav-btn left">
+                <button
+                    className="nav-btn left"
+                    onClick={() => changePage(data.currentPage - 1)}
+                >
                     <i className="fas fa-caret-left"></i>
                 </button>
-                <button className="nav-btn">#</button>
-                <button className="nav-btn right">
+                {numberOfPages.map((page) => (
+                    <button
+                        key={page}
+                        className={`nav-btn ${
+                            page === data.currentPage ? "active" : ""
+                        }`}
+                        onClick={() => changePage(page)}
+                    >
+                        {page}
+                    </button>
+                ))}
+                <button
+                    className="nav-btn right"
+                    onClick={() => changePage(data.currentPage + 1)}
+                >
                     <i className="fas fa-caret-right"></i>
                 </button>
             </div>

@@ -9,9 +9,17 @@ const Dashboard = () => {
     /* REDUX STATE */
     const data = useSelector((state) => state.pokemonList);
 
+    /* PAGINATION */
+    const lastPokemonIndex = data.currentPage * data.pokemonsPerPage;
+    const firstPokemonIndex = lastPokemonIndex - data.pokemonsPerPage;
+    const currentPagePokemons = data.filteredPokemons.slice(
+        firstPokemonIndex,
+        lastPokemonIndex,
+    );
+
     return (
         <div className="dashboard-container">
-            {data.filteredPokemons.map((pokemon) => (
+            {currentPagePokemons.map((pokemon) => (
                 <PokemonCard key={pokemon.id} data={pokemon} />
             ))}
         </div>
