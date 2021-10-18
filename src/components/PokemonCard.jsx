@@ -110,7 +110,7 @@ const PokemonCard = ({ data }) => {
                     <div className="card-height"><i className="fas fa-arrows-alt-v"></i> {(height/10)}m.</div>
                 </div>
 
-                <h3 className='card-text'>Abilities:</h3>
+                <h2 className='card-text'>Abilities:</h2>
                 <div className="card-abilities">
                     {abilities.map((ability, i) => (
                         <div className="abilitie-pill" key={i}>{ability.ability.name}</div>

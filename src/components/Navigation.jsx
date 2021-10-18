@@ -203,6 +203,7 @@ const BottomNav = () => {
                             : false
                     }
                     tabIndex="2"
+                    aria-label="Previous page"
                 >
                     <i className="fas fa-caret-left"></i>
                 </button>
@@ -227,6 +228,7 @@ const BottomNav = () => {
                             : false
                     }
                     tabIndex="3"
+                    aria-label="Next page"
                 >
                     <i className="fas fa-caret-right"></i>
                 </button>
