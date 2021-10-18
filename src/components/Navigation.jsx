@@ -1,5 +1,5 @@
 /* REACT */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 /* REDUX */
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -152,6 +152,44 @@ const BottomNav = () => {
         changeAmountPerPage(newAmount);
         changePage(1);
     };
+
+    /**
+     * Triggers the corresponding action according to the pressed key.
+     * @param {*} e from event listener
+     */
+    const handleKeyPress = (e) => {
+        switch (e.keyCode) {
+            case 37:
+                let prevPage =
+                    data.currentPage === 1 ? 1 : data.currentPage - 1;
+                changePage(prevPage);
+                break;
+            case 39:
+                let nextPage =
+                    data.currentPage === lastPage
+                        ? lastPage
+                        : data.currentPage + 1;
+                changePage(nextPage);
+                break;
+            case 49:
+                changeAmountPerPage(10);
+                break;
+            case 50:
+                changeAmountPerPage(20);
+                break;
+            case 53:
+                changeAmountPerPage(50);
+                break;
+            default:
+                return;
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("keyup", handleKeyPress);
+        return () => window.removeEventListener("keyup", handleKeyPress);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [data.currentPage]);
 
     return (
         <div className="nav-container">
