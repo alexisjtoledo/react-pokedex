@@ -4,6 +4,7 @@ import {
     CHANGE_PAGE,
     CHANGE_POKEMONS_PER_PAGE,
     CHANGE_TOTAL_AMOUNT,
+    UPLOAD_POKEMON,
 } from "../actions";
 
 export const fetchPokemons = (newPokemon) => {
@@ -47,6 +48,15 @@ export const changeTotalAmount = (newAmount) => {
         dispatch({
             type: CHANGE_TOTAL_AMOUNT,
             payload: newAmount,
+        });
+    };
+};
+
+export const uploadPokemon = (pokemon) => {
+    return (dispatch) => {
+        dispatch({
+            type: UPLOAD_POKEMON,
+            payload: pokemon,
         });
     };
 };

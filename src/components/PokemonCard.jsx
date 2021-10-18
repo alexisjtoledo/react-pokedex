@@ -1,7 +1,16 @@
 /* REACT */
 import React, { useEffect, useState } from "react";
+/* REDUX */
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../redux/index";
 
 const PokemonCard = ({ data }) => {
+
+    /* REDUX ACTION */
+    const dispatch = useDispatch();
+    const { uploadPokemon } =
+        bindActionCreators(actionCreators, dispatch);
 
     /* PARAMS */
     const { id, name, weight, height, abilities, sprites, types } = data;
@@ -108,7 +117,12 @@ const PokemonCard = ({ data }) => {
                     ))}
                 </div>
 
-                <button className="card-action-btn" >More details</button>
+                <button
+                    className="card-action-btn"
+                    onClick={() => {uploadPokemon({...data, primaryColor: primaryColor, secondaryColor: secondaryColor})}} 
+                >
+                    More details
+                </button>
             </div>
         </div>
     );

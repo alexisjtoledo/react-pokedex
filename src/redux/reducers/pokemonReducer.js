@@ -4,6 +4,7 @@ import {
     CHANGE_PAGE,
     CHANGE_POKEMONS_PER_PAGE,
     CHANGE_TOTAL_AMOUNT,
+    UPLOAD_POKEMON,
 } from "../actions/index";
 
 const initialState = {
@@ -43,6 +44,11 @@ const pokemonReducer = (state = initialState, action) => {
             return {
                 ...state,
                 totalAmount: action.payload,
+            };
+        case UPLOAD_POKEMON:
+            return {
+                ...state,
+                openedPokemon: action.payload,
             };
         default:
             return state;

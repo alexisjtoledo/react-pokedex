@@ -1,0 +1,136 @@
+@import variables
+
+.details-container
+    display: flex
+    width: 90vw
+    height: 80vh
+    transition: all 200ms ease-in-out
+
+.details-img-container
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    border-top-right-radius: 2em
+    border-bottom-right-radius: 2em
+    box-shadow: 10px 0px 100px $lightshadow
+
+.details-id
+    align-self: flex-start
+    width: 25vw
+    margin:
+        top: .5em
+        left: .5em
+    font:
+        size: 3em
+        weight: 700
+        style: italic
+    color: $whiteshadow
+
+.details-id span
+    font:
+        weight: 300
+        style: italic
+
+.details-img
+    width: 28vw
+    height: auto
+    margin:
+        right: -10vw
+        left: 5vw
+
+.details-name
+    font:
+        size: 3em
+        weight: 700
+    text-transform: capitalize
+
+.details-size
+    display: flex
+
+.details-weight
+    margin:
+        right: 1em
+
+.details-height
+
+.details-close-btn
+    width: 80%
+    margin:
+        bottom: 2em
+    padding: 1em
+    border-radius: 1em
+    border: none
+    color: $primary
+    background-color: $offwhite
+    box-shadow: 0 0 10px $lightshadow
+    cursor: pointer
+    &:hover
+        box-shadow: 0 0 10px $shadow
+
+.details-main-panel
+    padding:
+        top: 3em
+        right: 5em
+        bottom: 5em
+        left: 10vw
+    overflow: hidden
+
+.details-label
+    margin:
+        right: .5em
+        bottom: .3em
+    padding:
+        top: .2em
+    font:
+        weight: 700
+    text-transform: capitalize
+    color: $offwhite
+
+.secondary
+    font:
+        weight: 400
+
+.details-label span
+    color: $tint
+
+.details-pill-container
+    display: flex
+    margin:
+        bottom: .5em
+    flex-wrap: wrap
+
+.details-pill
+    margin:
+        right: .5em
+        bottom: .5em
+    padding: .5em
+    font:
+        size: .5em
+    text-transform: capitalize
+    border-radius: .7em
+    border: solid 2px $tint
+    background-color: $offwhite
+    box-shadow: 0 0 10px $lightshadow
+
+.details-stats-container
+    display: flex
+    flex-direction: column
+    margin:
+        bottom: .5em
+
+.statistic
+
+.stat-background
+    background-color: $offwhite
+    width: 40vw
+    height: 16px
+
+.stat-active
+    background-color: $tint
+    width: 0vw
+    height: 12px
+    margin:
+        top: -14px
+        left: 2px
+        bottom: .5em

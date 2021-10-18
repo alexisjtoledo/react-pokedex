@@ -4,6 +4,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 /* COMPONENTS */
 import PokemonCard from "./PokemonCard";
+import PokemonDetails from "./PokemonDetails";
 
 const Dashboard = () => {
     /* REDUX STATE */
@@ -19,9 +20,13 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-container">
-            {currentPagePokemons.map((pokemon) => (
-                <PokemonCard key={pokemon.id} data={pokemon} />
-            ))}
+            {data.openedPokemon !== null ? (
+                <PokemonDetails />
+            ) : (
+                currentPagePokemons.map((pokemon) => (
+                    <PokemonCard key={pokemon.id} data={pokemon} />
+                ))
+            )}
         </div>
     );
 };

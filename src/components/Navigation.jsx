@@ -97,6 +97,7 @@ const TopNav = () => {
                     onChange={(e) => {
                         filterList(e.target.value);
                     }}
+                    disabled={data.openedPokemon ? true : false}
                 />
                 <div
                     className="top-input-clear-btn"
@@ -109,6 +110,7 @@ const TopNav = () => {
             <select
                 className="top-selector"
                 onChange={(e) => sortList(e.target.value)}
+                disabled={data.openedPokemon ? true : false}
             >
                 <option value="id">Number</option>
                 <option value="name">Name</option>
@@ -155,7 +157,11 @@ const BottomNav = () => {
                 <button
                     className="nav-btn left"
                     onClick={() => changePage(data.currentPage - 1)}
-                    disabled={data.currentPage === 1 ? true : false}
+                    disabled={
+                        data.currentPage === 1 || data.openedPokemon
+                            ? true
+                            : false
+                    }
                 >
                     <i className="fas fa-caret-left"></i>
                 </button>
@@ -166,6 +172,7 @@ const BottomNav = () => {
                             page === data.currentPage ? "active" : ""
                         }`}
                         onClick={() => changePage(page)}
+                        disabled={data.openedPokemon ? true : false}
                     >
                         {page}
                     </button>
@@ -173,7 +180,11 @@ const BottomNav = () => {
                 <button
                     className="nav-btn right"
                     onClick={() => changePage(data.currentPage + 1)}
-                    disabled={data.currentPage === lastPage ? true : false}
+                    disabled={
+                        data.currentPage === lastPage || data.openedPokemon
+                            ? true
+                            : false
+                    }
                 >
                     <i className="fas fa-caret-right"></i>
                 </button>
@@ -186,7 +197,11 @@ const BottomNav = () => {
                         data.pokemonsPerPage === 10 ? "active" : ""
                     }`}
                     onClick={() => handleChangeAmount(10)}
-                    disabled={data.pokemonsPerPage === 10 ? true : false}
+                    disabled={
+                        data.pokemonsPerPage === 10 || data.openedPokemon
+                            ? true
+                            : false
+                    }
                 >
                     10
                 </button>
@@ -195,7 +210,11 @@ const BottomNav = () => {
                         data.pokemonsPerPage === 20 ? "active" : ""
                     }`}
                     onClick={() => handleChangeAmount(20)}
-                    disabled={data.pokemonsPerPage === 20 ? true : false}
+                    disabled={
+                        data.pokemonsPerPage === 20 || data.openedPokemon
+                            ? true
+                            : false
+                    }
                 >
                     20
                 </button>
@@ -204,7 +223,11 @@ const BottomNav = () => {
                         data.pokemonsPerPage === 50 ? "active" : ""
                     }`}
                     onClick={() => handleChangeAmount(50)}
-                    disabled={data.pokemonsPerPage === 50 ? true : false}
+                    disabled={
+                        data.pokemonsPerPage === 50 || data.openedPokemon
+                            ? true
+                            : false
+                    }
                 >
                     50
                 </button>
