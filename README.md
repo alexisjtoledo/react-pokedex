@@ -29,17 +29,19 @@ It alsos uses the Monserrat Font from [Google Fonts](https://fonts.google.com/) 
 1. Clone the project
    `git clone https://github.com/alexisjtoledo/react-pokedex`
 
-2. Install dependencies
+2. Move to the project folder `cd react-pokedex`
+
+3. Install dependencies
    `yarn install`
 
-3. Run the app in the development server (local)
+4. Run the app in the development server (local)
    `yarn start`
 
 -   If it doesn't opens automatically, open a web browser and type: [http://localhost:3000](http://localhost:3000)
 
 ## Live version
 
-[Open live version]()
+[Open live version](https://react-redux-pokedex.web.app/)
 
 ## Known Issues
 
