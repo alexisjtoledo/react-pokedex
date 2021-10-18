@@ -1,5 +1,3 @@
-/* REACT */
-import { useEffect } from "react";
 /* COMPONENTS */
 import Navigation from "./components/Navigation";
 import Dashboard from "./components/Dashboard";
