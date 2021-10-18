@@ -11,7 +11,7 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard-container">
-            {data.pokemons.map((pokemon) => (
+            {data.filteredPokemons.map((pokemon) => (
                 <PokemonCard key={pokemon.id} data={pokemon} />
             ))}
         </div>

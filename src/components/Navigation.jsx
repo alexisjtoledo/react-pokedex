@@ -1,5 +1,9 @@
 /* REACT */
-import React from "react";
+import React, { useState } from "react";
+/* REDUX */
+import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../redux/index";
 
 const Navigation = ({ bottom }) => {
     return (
@@ -10,14 +14,49 @@ const Navigation = ({ bottom }) => {
 };
 
 const TopNav = () => {
+    /* REDUX ACTIONS */
+    const dispatch = useDispatch();
+
+    const { filterPokemons } = bindActionCreators(actionCreators, dispatch);
+
+    /* REDUX STATE */
+    const data = useSelector((state) => state.pokemonList);
+
+    /* LOCAL STATE */
+    const [searchValue, setSearchValue] = useState("");
+
+    /**
+     * Filters the full array of pokemons according to the search string.
+     * @param {String} value from input.
+     */
+    const filterList = (value) => {
+        setSearchValue(value);
+        let normalizedValue = value.toLowerCase();
+        const filteredResults = data.pokemons.filter((pokemon) => {
+            return pokemon.name.indexOf(normalizedValue) > -1;
+        });
+        filterPokemons(filteredResults);
+    };
+
     return (
         <div className="nav-container">
             <span className="input-container">
                 <div className="search-icon">
                     <i className="fas fa-search"></i>
                 </div>
-                <input type="text" className="top-input" placeholder="Search" />
-                <div className="top-input-clear-btn">
+                <input
+                    type="text"
+                    className="top-input"
+                    placeholder="Search"
+                    value={searchValue}
+                    onChange={(e) => {
+                        filterList(e.target.value);
+                    }}
+                />
+                <div
+                    className="top-input-clear-btn"
+                    onClick={() => filterList("")}
+                >
                     <i className="fas fa-times-circle"></i>
                 </div>
             </span>

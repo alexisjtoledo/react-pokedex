@@ -1,10 +1,19 @@
-import { FETCH_POKEMONS } from "../actions";
+import { FETCH_POKEMONS, FILTER_POKEMONS } from "../actions";
 
 export const fetchPokemons = (newPokemon) => {
     return (dispatch) => {
         dispatch({
             type: FETCH_POKEMONS,
             payload: newPokemon,
+        });
+    };
+};
+
+export const filterPokemons = (newList) => {
+    return (dispatch) => {
+        dispatch({
+            type: FILTER_POKEMONS,
+            payload: newList,
         });
     };
 };

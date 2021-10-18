@@ -1,4 +1,4 @@
-import { FETCH_POKEMONS } from "../actions/index";
+import { FETCH_POKEMONS, FILTER_POKEMONS } from "../actions/index";
 
 const initialState = {
     pokemons: [],
@@ -17,6 +17,11 @@ const pokemonReducer = (state = initialState, action) => {
                 ...state,
                 pokemons: [...state.pokemons, action.payload],
                 filteredPokemons: [...state.pokemons, action.payload],
+            };
+        case FILTER_POKEMONS:
+            return {
+                ...state,
+                filteredPokemons: action.payload,
             };
         default:
             return state;
