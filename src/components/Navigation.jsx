@@ -38,6 +38,47 @@ const TopNav = () => {
         filterPokemons(filteredResults);
     };
 
+    /**
+     * Sorts the full array of pokemons
+     * according to the selected criteria.
+     * @param {String} sortType from selector current value.
+     */
+    const sortList = (sortType) => {
+        let sortedPokemons;
+        switch (sortType) {
+            case "id":
+                sortedPokemons = data.filteredPokemons.sort(
+                    (a, b) => a.id - b.id,
+                );
+                filterPokemons(sortedPokemons);
+                break;
+            case "name":
+                sortedPokemons = data.filteredPokemons.sort((a, b) => {
+                    let x = a.name;
+                    let y = b.name;
+                    return x === y ? 0 : x < y ? -1 : 1;
+                });
+                filterPokemons(sortedPokemons);
+                break;
+            case "height":
+                sortedPokemons = data.filteredPokemons.sort(
+                    (a, b) => a.height - b.height,
+                );
+                filterPokemons(sortedPokemons);
+                break;
+            case "weight":
+                sortedPokemons = data.filteredPokemons.sort(
+                    (a, b) => a.weight - b.weight,
+                );
+                filterPokemons(sortedPokemons);
+                break;
+            default:
+                sortedPokemons = data.filteredPokemons;
+                filterPokemons(sortedPokemons);
+                break;
+        }
+    };
+
     return (
         <div className="nav-container">
             <span className="input-container">
@@ -61,7 +102,10 @@ const TopNav = () => {
                 </div>
             </span>
             <span className="nav-label">Sort:&nbsp;</span>
-            <select className="top-selector">
+            <select
+                className="top-selector"
+                onChange={(e) => sortList(e.target.value)}
+            >
                 <option value="id">Number</option>
                 <option value="name">Name</option>
                 <option value="height">Height</option>
